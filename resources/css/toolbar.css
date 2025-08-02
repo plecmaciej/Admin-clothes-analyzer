@@ -1,0 +1,132 @@
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(to right, #1a1a1a, #2a2a2a); /* ciemny pasek */
+  border-bottom: 1px solid #444;
+  box-shadow: 0 2px 4px rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+
+  color: #ffffff; /* Jasny tekst zawsze */
+}
+
+.toolbar-left{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* LOGO */
+.toolbar-left .logo {
+  height: 40px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+
+/* PRAWY PANEL */
+.toolbar-right {
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* PRZYCISKI */
+.theme-toggle,
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;    
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: inherit;
+  padding: 5px;
+
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;   /* Wyrównanie w pionie */
+  gap: 6px;              /* Odstęp między imieniem a strzałką */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1px 10px;
+  font: inherit;
+}
+
+/* DROPDOWN */
+.dropdown,
+.mode {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #1e1e1e;
+  border: 1px solid #444;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  min-width: 120px;
+  z-index: 1001;
+}
+
+.dropdown-menu a {
+  color: #f0f0f0;
+  text-decoration: none;
+  margin: 0.25rem 0;
+}
+
+
+.logout-button {
+  background: none;
+  border: none;
+  color: #fdfeff;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  text-align: left;
+}
+.logout-button:hover {
+  text-decoration: underline;
+}
+
+.arrow {
+  font-size: 0.8rem;
+  transition: transform 0.2s;
+}
+
+
+.size-6 {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 0.25rem;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-toggle .icon {
+  width: 24px;
+  height: 24px; 
+
+}

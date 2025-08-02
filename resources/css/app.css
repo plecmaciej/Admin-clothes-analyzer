@@ -1,0 +1,51 @@
+/* RESET PODSTAWOWY */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* USTAWIENIA DLA CAŁEGO DOKUMENTU */
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #f0f4f8, #e0ecf1); /* domyślny jasny */
+  color: #1e1e1e;
+  line-height: 1.6;
+   border: 2px solid black;
+}
+
+body.dark-mode html {
+  background: linear-gradient(to bottom right, #121212, #1e1e1e);
+}
+
+/* CIEMNY MOTYW */
+body.dark-mode {
+  background: linear-gradient(to bottom right, #121212, #1e1e1e);
+  color: #f0f0f0;
+}
+
+/* LINKI */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* PRZYCISKI */
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* ZAPASOWE KLASY */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hidden {
+  display: none;
+}
