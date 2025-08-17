@@ -19,6 +19,9 @@
 }
 
 .sidebar-nav button {
+  display: flex;        
+  align-items: center;    
+  gap: 12px;
   background: none;
   border: none;
   padding: 0.75rem 1rem;
@@ -28,7 +31,7 @@
   transition: background 0.2s, color 0.2s;
   border-radius: 4px;
   color: #1e1e1e;
-  border-bottom: 1px solid #ddd; /* <-- granica */
+  border-bottom: 1px solid #ddd; 
 }
 
 .sidebar-nav button:last-child {
@@ -37,14 +40,14 @@
 
 body.dark-mode .sidebar-nav button {
   color: #f0f0f0;
-  border-bottom: 1px solid #333; /* ciemna wersja granicy */
+  border-bottom: 1px solid #333; 
 }
 
 .sidebar-nav button:hover {
   background-color: #e2e6ea;
 }
 
-/* TRYB CIEMNY */
+
 body.dark-mode .sidebar {
   background-color: #1e1e1e;
   border-right: 1px solid #333;
@@ -56,4 +59,9 @@ body.dark-mode .sidebar-nav button {
 
 body.dark-mode .sidebar-nav button:hover {
   background-color: #2a2a2a;
+}
+
+
+.sidebar-nav button {
+  line-height: 1.5;  
 }

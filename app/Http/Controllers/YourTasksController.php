@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\Task;
 use Illuminate\Support\Facades\Auth;
+use App\Services\TaskStatusService;
 
 class YourTasksController extends Controller
 {
@@ -23,7 +24,7 @@ class YourTasksController extends Controller
         ]);
     }
 
-    public function update(Request $request, Task $task)
+    public function update(Request $request, Task $task, TaskStatusService $service)
     {
         if ($task->assignee_id !== Auth::id()) {
             abort(403, 'Brak dostępu do tego zadania');
@@ -41,6 +42,8 @@ class YourTasksController extends Controller
         $task->update(array_merge($data, [
             'status' => 'in_progress',
         ]));
+
+        $service->handleInProgressStatus($task);
 
         return redirect()->back();
     }

@@ -4,7 +4,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\YourTasksController;
+use App\Http\Controllers\TestScraperController;
 use App\Http\Controllers\AllTasksController;
+use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\CatalogProductController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -18,8 +21,11 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/test-scraper', [TestScraperController::class, 'test']);
+
 
 Route::middleware('auth')->group(function () {
+
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/all-tasks', [AllTasksController::class, 'index'])->name('all-tasks.index');
@@ -38,6 +44,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
     Route::post('/tasks/{task}/assign', [TaskController::class, 'assign'])->name('tasks.assign');
     
+    Route::get('/catalogs', [CatalogController::class, 'index'])->name('catalogs.index');
+    Route::delete('/catalogs/{catalog}', [CatalogController::class, 'destroy'])->name('catalogs.destroy');
+    Route::get('/catalogs/{catalog}', [CatalogProductController::class, 'show'])->name('catalogs.show');
+    Route::post('/catalogs/{catalog}/products', [CatalogProductController::class, 'store'])->name('catalogs.products.store');
+    Route::delete('/catalogs/{catalog}/products/{product}', [CatalogProductController::class, 'destroy'])->name('catalogs.products.destroy');
+
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

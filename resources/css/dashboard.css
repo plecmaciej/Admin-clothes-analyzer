@@ -2,7 +2,7 @@ body{
     background: linear-gradient(to bottom right, #f0f4f8, #e0ecf1);
 }
 
-b
+
 
 .dashboard-layout {
   display: flex;
@@ -96,6 +96,19 @@ body.dark-mode .assigned-tasks {
 }
 
 
+.task-form{
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-right:2rem;
+  margin-top:1rem;
+}
+
+body.dark-mode .task-form{
+  background-color: #1e1e1e ;
+}
+
 .task-item {
   padding: 1rem;
   margin: 2rem;
@@ -149,6 +162,19 @@ body.dark-mode .task-item{
   margin-bottom: 10px;
 }
 
+.form-button{
+  margin-left: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+
+
+}
+
 .assign-button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
@@ -180,3 +206,4 @@ body.dark-mode .task-item{
 .delete-button2:hover {
   background-color: #c0392b;
 }
+

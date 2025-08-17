@@ -55,7 +55,7 @@
           <p v-else>Brak dostępnych zadań.</p>
         </section>
 
-        <button @click="showForm = !showForm" class="assign-button">
+        <button @click="showForm = !showForm" class="form-button">
           {{ showForm ? 'Ukryj formularz' : '+ Dodaj nowe zadanie' }}
         </button>
 
