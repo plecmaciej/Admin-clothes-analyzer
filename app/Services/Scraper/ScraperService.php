@@ -15,7 +15,7 @@ class ScraperService
             ->userAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/201.0 Safari/537.36')
             ->bodyHtml();
 
-        // Zapisz HTML do debugowania
+
         file_put_contents(storage_path('app/scraped.html'), $html);
 
         $crawler = new Crawler($html);
@@ -51,7 +51,7 @@ class ScraperService
             $response = $client->request('GET', $url);
             $json = $response->toArray();
 
-            // Wyciągamy tylko to, co chcesz
+
             $name  = $json['product']['title'] ?? null;
             $image = $json['product']['image'] ?? null;
             $price = $json['product']['priceData']['price'] ?? null;
@@ -63,7 +63,7 @@ class ScraperService
                 'price' => $price
             ];
 
-            // Możesz zapisać do pliku lub zwrócić
+
             file_put_contents(
                 storage_path("app/product_{$productId}_short.json"),
                 json_encode($result, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)

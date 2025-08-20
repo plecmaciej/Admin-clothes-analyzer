@@ -8,6 +8,7 @@ use Inertia\Inertia;
 use App\Models\Task;
 use Illuminate\Support\Facades\Auth;
 use App\Services\TaskStatusService;
+use App\Jobs\ProcessTaskJob;
 
 class YourTasksController extends Controller
 {
@@ -38,12 +39,17 @@ class YourTasksController extends Controller
             'frequency' => 'nullable|string',
         ]);
 
-
-        $task->update(array_merge($data, [
+        $task->update([
+            ...$data,
             'status' => 'in_progress',
-        ]));
+        ]);
 
-        $service->handleInProgressStatus($task);
+
+        ProcessTaskJob::dispatch($task->id)->afterCommit();
+
+
+        //$service->handleInProgressStatus($task);
+
 
         return redirect()->back();
     }

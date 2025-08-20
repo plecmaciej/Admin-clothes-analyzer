@@ -1,0 +1,190 @@
+.dashboard-layout {
+  display: flex;
+
+}
+
+.page-header {
+  padding: 1rem 2rem;
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.page-header h2 {
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin: 0;
+}
+
+.dashboard-wrapper {
+  margin-left: 220px;
+  padding:2rem;
+  flex-grow: 1;
+  padding: 2rem;
+}
+
+.welcome-message {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #111827;
+}
+
+body.dark-mode .welcome-message{
+    color:#f3f4f6
+}
+
+/* KONTENER PRODUKTÓW */
+.catalog-products {
+  margin: 0; 
+}
+
+.catalog-products h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+body.dark-mode .catalog-products h3 {
+  color: #eee;
+}
+
+/* GRID */
+.catalog-products ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+}
+
+/* KAFELKI */
+.product-item {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease-in-out, background 0.3s;
+}
+
+.product-item:hover {
+  transform: translateY(-4px);
+}
+
+/* DARK MODE */
+body.dark-mode .product-item {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* OBRAZEK */
+.product-image {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;  
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: #f9f9f9;   
+}
+
+body.dark-mode .product-image {
+  background: #1a1a1a;   
+}
+
+/* NAZWA + CENA */
+.product-header strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+body.dark-mode .product-header strong {
+  color: #f5f5f5;
+}
+
+.product-header span {
+  display: block;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+body.dark-mode .product-header span {
+  color: #ccc;
+}
+
+/* PRZYCISK USUWANIA */
+.delete-button {
+  margin-top: 10px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.delete-button:hover {
+  background: #c0392b;
+}
+
+/* SEKCJA DODAWANIA PRODUKTU */
+.add-product {
+  margin-top: 30px;
+  padding: 20px;
+  border-top: 2px solid #ddd;
+}
+
+body.dark-mode .add-product {
+  border-top: 2px solid #444;
+}
+
+.add-product h4 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+body.dark-mode .add-product h4 {
+  color: #eee;
+}
+
+.add-product form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.add-product input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  color: #222;
+}
+
+body.dark-mode .add-product input {
+  background: #2b2b2b;
+  border: 1px solid #555;
+  color: #eee;
+}
+
+.add-product button {
+  background: #2ecc71;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.add-product button:hover {
+  background: #27ae60;
+}

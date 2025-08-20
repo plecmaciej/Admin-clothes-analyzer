@@ -13,18 +13,17 @@
         <section class="catalog-products">
           <h3>Katalog: {{ catalog.title }}</h3>
 
-          <ul v-if="catalog.products.length">
+          <ul v-if="catalog.products.length" class="product-grid">
             <li v-for="product in catalog.products" :key="product.id" class="product-item">
-              <div class="product-header">
-                <strong>{{ product.name }}</strong>
-                <span> Cena: {{ product.pivot.price }} PLN</span>
-                <p>{{ product.image_path }}</p>
                 <img 
-  :src="`/storage/${product.image_path}`" 
-  :alt="product.name" 
-  class="product-image"
-/>
-              </div>
+                  :src="`/storage/${product.image_path}`" 
+                  :alt="product.name" 
+                  class="product-image"
+                />
+                <div class="product-header">
+                  <strong>{{ product.name }}</strong>
+                  <span>{{ product.pivot.price }} PLN</span>
+                </div>
 
               <button @click="deleteProduct(product.id)" class="delete-button">
                 Usuń produkt
@@ -53,7 +52,7 @@ import { usePage, router } from '@inertiajs/vue3'
 import Toolbar from '@/Components/Toolbar.vue'
 import Sidebar from '@/Components/Sidebar.vue'
 import { reactive } from 'vue'
-import '../../css/dashboard.css'
+import '../../css/catalog.css'
 
 const authUser = usePage().props.authUser
 const catalog = usePage().props.catalog || { products: [] }

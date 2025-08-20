@@ -10,25 +10,27 @@
           Witaj {{ authUser.name }}
         </div>
 
-        <section class="catalogs-list">
+        <section class="catalog-products">
           <h3>Twoje katalogi</h3>
 
-          <ul v-if="catalogs.length">
-            <li v-for="catalog in catalogs" :key="catalog.id" class="catalog-item">
-              <div class="catalog-header">
-                <strong>{{ catalog.name }}</strong>
+          <ul v-if="catalogs.length" class="product-grid">
+            <li
+              v-for="catalog in catalogs"
+              :key="catalog.id"
+              class="product-item catalog-card"
+              @click="navigate(`/catalogs/${catalog.id}`)"
+            >
+              <div class="product-header">
+                <strong>{{ catalog.title }}</strong>
                 <span>Ilość produktów: {{ catalog.products_count }}</span>
               </div>
 
-              <div class="catalog-actions">
-                <button @click="navigate(`/catalogs/${catalog.id}`)" class="view-button">
-                  Zobacz katalog
-                </button>
-
-                <button @click="deleteCatalog(catalog.id)" class="delete-button">
-                  Usuń katalog
-                </button>
-              </div>
+              <button
+                @click.stop="deleteCatalog(catalog.id)"
+                class="delete-button"
+              >
+                Usuń katalog
+              </button>
             </li>
           </ul>
 
@@ -43,7 +45,7 @@
 import { usePage, router } from '@inertiajs/vue3'
 import Toolbar from '@/Components/Toolbar.vue'
 import Sidebar from '@/Components/Sidebar.vue'
-import '../../css/dashboard.css'
+import '../../css/catalog.css'
 
 const authUser = usePage().props.authUser
 const catalogs = usePage().props.catalogs || []

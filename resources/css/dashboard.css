@@ -85,11 +85,13 @@ body.dark-mode .content-box{
 .assigned-tasks {
   margin-top: 2rem;
   margin-bottom: 2rem;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 2rem; 
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;
 }
+
+
 body.dark-mode .assigned-tasks {
   background: #1e1e1e;
   border-color: #333;
@@ -163,7 +165,7 @@ body.dark-mode .task-item{
 }
 
 .form-button{
-  margin-left: 2rem;
+  margin-top: 1rem;
   padding: 0.5rem 1rem;
   background-color: #4caf50;
   color: white;
